@@ -1,6 +1,6 @@
 [package]
 name = "libcef-sys"
-version = "117.2.6"
+version = "124.3.8"
 edition = "2021"
 license = "Apache-2.0 OR MIT"
 authors = ["Wu Yu Wei <yuweiwu@pm.me>"]
@@ -19,4 +19,4 @@ features = [ "dox" ]
 [dependencies]
 
 [dev-dependencies]
-winit = "0.28"
+winit = "0.30"

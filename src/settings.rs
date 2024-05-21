@@ -66,6 +66,10 @@ pub struct Settings {
     pub cookieable_schemes_list: CefString,
 
     pub cookieable_schemes_exclude_defaults: bool,
+
+    pub chrome_policy_id: CefString,
+
+    pub chrome_app_icon_id: i32,
 }
 
 impl Settings {
@@ -111,6 +115,8 @@ impl Settings {
             accept_language_list: self.accept_language_list.get_raw(),
             cookieable_schemes_list: self.cookieable_schemes_list.get_raw(),
             cookieable_schemes_exclude_defaults: self.cookieable_schemes_exclude_defaults as c_int,
+            chrome_policy_id: self.chrome_policy_id.get_raw(),
+            chrome_app_icon_id: self.chrome_app_icon_id,
         }
     }
 }

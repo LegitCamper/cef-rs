@@ -1,4 +1,4 @@
-use std::ffi::c_int;
+use std::ffi::{c_int, c_ulong};
 
 use cef_sys::{
     cef_window_create_top_level, cef_window_delegate_t, cef_window_info_t, cef_window_t,
@@ -53,11 +53,11 @@ impl WindowInfo {
         cef_window_info_t {
             window_name: self.window_name.get_raw(),
             bounds: self.bounds,
-            parent_window: self.parent_window,
+            parent_window: self.parent_window as c_ulong,
             windowless_rendering_enabled: self.windowless_rendering_enabled as c_int,
             shared_texture_enabled: self.shared_texture_enabled as c_int,
             external_begin_frame_enabled: self.external_begin_frame_enabled as c_int,
-            window: self.window,
+            window: self.window as c_ulong,
         }
     }
 }
