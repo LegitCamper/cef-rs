@@ -1,15 +1,10 @@
-#[allow(
-    non_snake_case,
-    non_camel_case_types,
-    non_upper_case_globals,
-    dead_code,
-    clippy::all
-)]
-mod bindings;
+#![allow(non_upper_case_globals)]
+#![allow(non_camel_case_types)]
+#![allow(non_snake_case)]
+
+include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
 
 use std::ptr::null_mut;
-
-pub use bindings::*;
 
 impl Default for _cef_string_utf16_t {
     fn default() -> Self {

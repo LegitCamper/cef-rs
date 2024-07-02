@@ -38,6 +38,8 @@ fn main() {
         dbg!(cef_execute_process(&arg, &mut app, null_mut()));
 
         let settings = cef_settings_t {
+            chrome_app_icon_id: 1,
+            chrome_policy_id: cef_string_utf16_t::default(),
             size: size_of::<cef_settings_t>(),
             no_sandbox: 1,
             browser_subprocess_path: cef_string_t::default(),
@@ -106,6 +108,7 @@ fn main() {
         dbg!(cef_url);
 
         let setting = cef_browser_settings_t {
+            chrome_zoom_bubble: cef_state_t::STATE_DEFAULT,
             size: size_of::<cef_browser_settings_t>(),
             windowless_frame_rate: 0,
             standard_font_family: cef_string_t::default(),
@@ -132,7 +135,6 @@ fn main() {
             databases: cef_state_t::STATE_DEFAULT,
             webgl: cef_state_t::STATE_DEFAULT,
             background_color: 0,
-            accept_language_list: cef_string_t::default(),
             chrome_status_bubble: cef_state_t::STATE_DEFAULT,
         };
 

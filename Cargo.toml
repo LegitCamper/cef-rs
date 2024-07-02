@@ -12,12 +12,10 @@ readme = "README.md"
 dox = ["cef-sys/dox"]
 
 [package.metadata.docs.rs]
-features = [ "dox" ]
+features = ["dox"]
 
 [workspace]
-members = [
- "sys",
-]
+members = ["sys"]
 
 [dependencies]
 cef-sys = { package = "libcef-sys", version = "124.3.8", path = "sys" }
@@ -25,4 +23,3 @@ widestring = "1.0"
 
 [dev-dependencies]
 winit = "0.28"
-
