@@ -76,6 +76,7 @@ But please understand that some requests might result into not planned.
 - Provide tools to bundle and distribute application.
 */
 
+mod accessibility;
 mod app;
 pub mod args;
 mod browser;
@@ -83,18 +84,23 @@ pub mod client;
 mod command_line;
 mod panel;
 pub mod rc;
+pub mod render;
 mod settings;
 pub mod string;
+mod value;
 mod view;
 mod window;
 
 pub use cef_sys as sys;
 
+pub use accessibility::*;
 pub use app::*;
 pub use browser::*;
 pub use command_line::*;
 pub use panel::*;
+pub use render::*;
 pub use settings::*;
+pub use value::*;
 pub use view::*;
 pub use window::*;
 
